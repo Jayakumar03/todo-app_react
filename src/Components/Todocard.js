@@ -4,18 +4,17 @@ import { FaCheckDouble } from "react-icons/fa";
 
 const Todo =({todos}) => {
    return(
-    
-    <ListGroup>
-         <ListGroupItem>
-        {
-           todos.map((todo) => {
-            <div>
-                    <h4 key={todo.id}>{todo.title}</h4>
-                    <h6>{todo.body}</h6>
-             </div>
-           })
-        }
-         </ListGroupItem>
+    <ListGroup className="mt-5 mb-2 items">
+         {
+            todos.map((todo) => (
+               <ListGroupItem key={todo.id}>
+                  <h3>{todo.title}</h3>
+                  <h6>{todo.body}</h6>
+                  <span
+                  className="float-right"><FaCheckDouble /></span>
+               </ListGroupItem>
+              ))
+         }
     </ListGroup>
    )
 }
