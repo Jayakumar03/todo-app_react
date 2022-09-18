@@ -42,3 +42,9 @@ form {
   background-color: darkgray;
   text-decoration: line-through;
 }
+
+.float-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
