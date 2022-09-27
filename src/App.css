@@ -10,16 +10,17 @@ body {
   position: relative;
   background-color: rgb(104, 104, 104);
 }
+
 h1 {
   text-align: center;
   margin-top: 20px;
   color: aliceblue;
 }
+
 form {
-  position: fixed;
-  bottom: 500px;
-  right: 30%;
-  left: 30%;
+  position: sticky;
+  width: 75%;
+  margin: 0 auto;
   border-radius: 8px;
   border: 2px solid rgb(66, 66, 180);
   color: #000;
@@ -39,12 +40,22 @@ form {
 }
 
 .completedTodo {
+  transition: 1s ease-in-out;
   background-color: darkgray;
   text-decoration: line-through;
 }
+
 
 .float-right{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
+
+.singleform{
+  border-radius: 10px;
+  box-shadow:0 2px 4px 4px rgba(0, 0, 0, 0.5) ;
+  border: 2px solid rgb(66, 66, 180);
+}
+
+

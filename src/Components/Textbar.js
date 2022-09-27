@@ -7,17 +7,16 @@ import {
     InputGroup
   } from "reactstrap";
   
-  import { v4 } from "uuid";
-  import Axios from "axios";
-  import Todocard from "./Todocard";
+import { v4 } from "uuid";
+import Axios from "axios";
+import Todocard from "./Todocard";
 import { get } from "lodash";
 
 
   const Textbar = () => {
 // STATE
     const [apiTodos, setApiTodos] = useState([])
-// new state for own todo
-   const [todo, setTodo] = useState([])
+    const [todo, setTodo] = useState([])
   
 
 // URLS
@@ -43,6 +42,8 @@ import { get } from "lodash";
         }).then(response => response.json)
         .then((json, setTodo) =>{setTodo={json}; console.log(todo)})
         .catch(err => console.error(err))
+
+      
 
         setTodo("");
 
@@ -72,13 +73,18 @@ import { get } from "lodash";
                 color="warning"
                 onClick={ 
                    (e)=>handleSubmit(e)
+                  
                 }
               >
                 Add
               </Button>
           </InputGroup>
         </FormGroup>
+       
         <Todocard todos={apiTodos} />
+
+        
+        
       </Form>
     )
   }
