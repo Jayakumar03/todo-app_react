@@ -16,7 +16,7 @@ Follow the below mentioned steps to clone and use the app
 Step 1 : clone the resposistory using the below mentioned  command 
 ## "Git clone https://github.com/Jayakumar03/todo-app_react"
 
- step 2 : open app folder local ide. Below mentioned  command  to install the npm -library and dependenceis
+ step 2 : open app folder local ide.  use Below mentioned command in command line interface(CLI) to install the npm -library and dependenceis
  # run command "npm install" in command line
 
  Step 3: To open app in local host:3000
