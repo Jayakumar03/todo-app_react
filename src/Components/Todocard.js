@@ -15,6 +15,7 @@ const Todo =({todos}) => {
    const [edit, setEdit] = useState(false)
 
 
+     //  ///////// updateTodo Function ////////// //
 // update todo will make dummy call to the api for put, using console in browser we can see which todo is beind updated
 const  updateTodo = (e,id, todo) => {
      
@@ -33,7 +34,7 @@ const  updateTodo = (e,id, todo) => {
      setIsUpdated(true)
       
    }
-
+      //  ///////// Delete todo Function ////////// //
    // Delete todo will make dummy call to the api for delete, using console in browser we can see which todo is beind deleted
 const  deleteTodo = (e,id,todo) => {
      
