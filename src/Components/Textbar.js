@@ -7,7 +7,8 @@ import {
     InputGroup
   } from "reactstrap";
   
-import { v4 } from "uuid";
+
+import { ToastContainer, toast } from 'react-toastify';
 import Axios from "axios";
 import Todocard from "./Todocard";
 import { get } from "lodash";
@@ -24,29 +25,36 @@ import { get } from "lodash";
    const postUrl = `https://jsonplaceholder.typicode.com/posts`;
 
 
-
+  //  ///////// Post Call Function ////////// //
+// this function will post the todo in the api and console the responsce
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if(todo === ""){
           return ( alert("Please enter a todo"))
-          // error getting data from api first time even if its undefined
         }
-
-        // console.log(todos)
+  
         getTodos()
 
-        // posting data to api
-        Axios.post(`${postUrl}`,{
-            title:{todo}
-        }).then(response => response.json)
-        .then((json, setTodo) =>{setTodo={json}; console.log(todo)})
-        .catch(err => console.error(err))
-
-      
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+          method: 'POST',
+            body: JSON.stringify({
+             title: {todo},
+             userId: 1,
+     }),
+     headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
 
         setTodo("");
 
+        toast.success("Success!", {
+          icon: "🚀",
+          theme: "dark"
+        });
     }
 
 

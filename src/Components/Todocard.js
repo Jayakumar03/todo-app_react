@@ -15,11 +15,11 @@ const Todo =({todos}) => {
    const [edit, setEdit] = useState(false)
 
 
-      // update todo will make dummy call to the api for put, using console in browser we can see which todo is beind updated
+// update todo will make dummy call to the api for put, using console in browser we can see which todo is beind updated
 const  updateTodo = (e,id, todo) => {
      
       e.preventDefault();
-      toast.info(" Todo Updated!", {
+      toast(" Todo Updated!", {
          position: toast.POSITION.TOP_RIGHT
        });
 
@@ -38,7 +38,8 @@ const  updateTodo = (e,id, todo) => {
 const  deleteTodo = (e,id,todo) => {
      
       e.preventDefault();
-      toast(" Todo deleted!", {
+      toast.warn(" Todo deleted!", {
+         theme: "dark",
          position: toast.POSITION.TOP_RIGHT
        });
 
@@ -47,7 +48,7 @@ const  deleteTodo = (e,id,todo) => {
          method: 'DELETE'
       })
      .catch(err => console.error(err))
-     console.log(`Deleted todo ↓`)
+     console.log( `Deleted todo ↓`)
      console.table(todo);     
    }
         
@@ -67,7 +68,7 @@ const  deleteTodo = (e,id,todo) => {
                        <button 
                         onClick={(e) => updateTodo(e,id,todo)}
                         className= "btn btn-primary mx-2"
-                        >Edit</button>
+                        >Update</button>
                        <button className='btn btn-danger mx-2' onClick={(e) => deleteTodo(e,id,todo) } >Delete</button>
                </ListGroupItem>
                )
